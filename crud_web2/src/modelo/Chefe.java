@@ -1,14 +1,17 @@
 package modelo;
 
+import java.util.Collection;
+
 public class Chefe extends Funcionario {
 
-	private Departamento departamento;
+	private Collection<Departamento> departamentos;
 
-	public Departamento getDepartamento() {
-		return departamento;
+	public Collection<Departamento> getDepartamentos() {
+		return departamentos;
 	}
 
-	public void setDepartamento(Departamento departamento) {
-		this.departamento = departamento;
+	public void setDepartamentos(Collection<Departamento> departamentos) {
+		this.departamentos = departamentos;
 	}
+	
 }
