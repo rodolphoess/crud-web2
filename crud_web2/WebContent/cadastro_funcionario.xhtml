@@ -20,7 +20,7 @@
 		<label>Salário: <h:inputText id="email"
 				value="#{funcionarioBean.funcionario.salario}" /></label>
 		<br />
-				
+
 		<h:commandButton action="#{funcionarioBean.salvar}" value="Salvar" />
 
 		<h2>Lista de Funcionários Cadastrados</h2>
@@ -40,11 +40,15 @@
 					<f:setPropertyActionListener value="#{p}"
 						target="#{funcionarioBean.funcionario}" />
 				</h:commandLink> | 
-				<h:commandLink value="Excluir" action="#{funcionarioBean.excluir}"> 
-				<f:setPropertyActionListener value="#{p}" target="#{funcionarioBean.funcionario}" />
+				<h:commandLink value="Excluir" action="#{funcionarioBean.excluir}">
+					<f:setPropertyActionListener value="#{p}"
+						target="#{funcionarioBean.funcionario}" />
 				</h:commandLink>
 			</h:column>
 		</h:dataTable>
+		
+		<h:commandLink value="Voltar Para Menu"
+				action="#{funcionarioBean.voltarParaMenu}" />
 	</h:form>
 </h:body>
 

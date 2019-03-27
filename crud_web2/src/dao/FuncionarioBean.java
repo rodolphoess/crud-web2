@@ -39,6 +39,10 @@ public class FuncionarioBean {
 			funcionario = new Funcionario();
 		}
 	}
+	
+	public String voltarParaMenu() {
+		return "/index";
+	}
 
 	public Funcionario getFuncionario() {
 		return funcionario;

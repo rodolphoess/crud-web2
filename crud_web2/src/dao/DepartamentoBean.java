@@ -39,6 +39,10 @@ public class DepartamentoBean {
 			departamento = new Departamento();
 		}
 	}
+	
+	public String voltarParaMenu() {
+		return "/index";
+	}
 
 	public Departamento getDepartamento() {
 		return departamento;

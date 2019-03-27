@@ -38,6 +38,10 @@ public class ChefeBean {
 			chefe = new Chefe();
 		}
 	}
+	
+	public String voltarParaMenu() {
+		return "/index";
+	}
 
 	public Chefe getChefe() {
 		return chefe;

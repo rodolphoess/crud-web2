@@ -17,7 +17,7 @@
 		<label>Nome: <h:inputText id="nome"
 				value="#{departamentoBean.departamento.nome}" /></label>
 		<br />
-				
+
 		<h:commandButton action="#{departamentoBean.salvar}" value="Salvar" />
 
 		<h2>Lista de Departamentos Cadastrados</h2>
@@ -26,18 +26,22 @@
 			<h:column>
 				<f:facet name="header">Nome</f:facet>
 				#{p.nome}
-			</h:column>			
+			</h:column>
 			<h:column>
 				<f:facet name="header">Ações</f:facet>
 				<h:commandLink value="Editar">
 					<f:setPropertyActionListener value="#{p}"
 						target="#{departamentoBean.departamento}" />
 				</h:commandLink> | 
-				<h:commandLink value="Excluir" action="#{departamentoBean.excluir}"> 
-				<f:setPropertyActionListener value="#{p}" target="#{departamentoBean.departamento}" />
+				<h:commandLink value="Excluir" action="#{departamentoBean.excluir}">
+					<f:setPropertyActionListener value="#{p}"
+						target="#{departamentoBean.departamento}" />
 				</h:commandLink>
 			</h:column>
 		</h:dataTable>
+
+		<h:commandLink value="Voltar Para Menu"
+			action="#{departamentoBean.voltarParaMenu}" />
 	</h:form>
 </h:body>
 
