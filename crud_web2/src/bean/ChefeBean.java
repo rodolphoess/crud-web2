@@ -1,4 +1,4 @@
-package dao;
+package bean;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -12,33 +12,27 @@ import negocio.ChefeService;
 @ManagedBean
 @SessionScoped
 public class ChefeBean {
-	
+
 	private Chefe chefe;
 	private Collection<Chefe> lista;
-	
+
 	private ChefeService chefeService;
 
 	public ChefeBean() {
 		this.chefe = new Chefe();
 		this.lista = new ArrayList<Chefe>();
-		
+
 		this.chefeService = new ChefeService();
 	}
-	
+
 	public void salvar() {
-		if (chefeService.salvar(chefe) && !lista.contains(chefe)) {
-			lista.add(chefe);
-		}
+		chefeService.salvar(chefe, lista);
 	}
-	
+
 	public void excluir() {
-		if (chefeService.deletar(chefe)) {
-			lista.remove(chefe);
-			
-			chefe = new Chefe();
-		}
+		chefeService.deletar(chefe, lista);
 	}
-	
+
 	public String voltarParaMenu() {
 		return "/index";
 	}

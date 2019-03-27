@@ -1,19 +1,28 @@
 package negocio;
 
+import java.util.Collection;
+
+import dao.ChefeDAO;
 import modelo.Chefe;
 
 public class ChefeService {
 	
-	public boolean salvar(Chefe chefe) {
-		return true;
+	private ChefeDAO dao;
+	
+	public ChefeService() {
+		this.dao = new ChefeDAO();
+	}
+
+	public void salvar(Chefe chefe, Collection<Chefe> lista) {
+		dao.salvar(chefe, lista);
 	}
 	
-	public boolean deletar(Chefe chefe) {
-		return true;
+	public void deletar(Chefe chefe, Collection<Chefe> lista) {
+		dao.excluir(chefe, lista);
 	}
 	
-	public boolean editar(Chefe chefe) {
-		return true;
+	public void editar(Chefe chefe, Collection<Chefe> lista) { 
+		
 	}
 
 }

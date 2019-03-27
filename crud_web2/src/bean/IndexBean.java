@@ -1,4 +1,4 @@
-package dao;
+package bean;
 
 import javax.faces.bean.ManagedBean;
 

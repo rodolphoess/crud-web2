@@ -1,4 +1,4 @@
-package dao;
+package bean;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -27,17 +27,11 @@ public class FuncionarioBean {
 	}
 	
 	public void salvar() {
-		if (funcionarioService.salvar(funcionario) && !lista.contains(funcionario)) {
-			lista.add(funcionario);
-		}
+		funcionarioService.salvar(funcionario, lista);
 	}
 	
 	public void excluir() {
-		if (funcionarioService.deletar(funcionario)) {
-			lista.remove(funcionario);
-			
-			funcionario = new Funcionario();
-		}
+		funcionarioService.deletar(funcionario, lista);
 	}
 	
 	public String voltarParaMenu() {

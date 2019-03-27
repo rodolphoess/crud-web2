@@ -1,18 +1,27 @@
 package negocio;
 
+import java.util.Collection;
+
+import dao.DepartamentoDAO;
 import modelo.Departamento;
 
 public class DepartamentoService {
-	
-	public boolean salvar(Departamento departamento) { 
-		return true;
+
+	private DepartamentoDAO dao;
+
+	public DepartamentoService() {
+		this.dao = new DepartamentoDAO();
 	}
 
-	public boolean deletar(Departamento departamento) {
-		return true;
+	public void salvar(Departamento departamento, Collection<Departamento> lista) {
+		dao.salvar(departamento, lista);
 	}
-	
-	public boolean editar(Departamento departamento) {
-		return true;
+
+	public void deletar(Departamento departamento, Collection<Departamento> lista) {
+		dao.excluir(departamento, lista);
+	}
+
+	public void editar(Departamento departamento, Collection<Departamento> lista) {
+
 	}
 }

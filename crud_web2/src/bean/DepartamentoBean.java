@@ -1,4 +1,4 @@
-package dao;
+package bean;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -26,18 +26,11 @@ public class DepartamentoBean {
 	}
 	
 	public void salvar() {
-		if (departamentoService.salvar(departamento) && !lista.contains(departamento)) {
-			lista.add(departamento);
-		}
-		
+		departamentoService.salvar(departamento, lista);
 	}
 	
 	public void excluir() {
-		if (departamentoService.deletar(departamento)) {
-			lista.remove(departamento);
-			
-			departamento = new Departamento();
-		}
+		departamentoService.deletar(departamento, lista);
 	}
 	
 	public String voltarParaMenu() {

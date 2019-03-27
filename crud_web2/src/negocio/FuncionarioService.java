@@ -1,18 +1,27 @@
 package negocio;
 
+import java.util.Collection;
+
+import dao.FuncionarioDAO;
 import modelo.Funcionario;
 
 public class FuncionarioService {
-
-	public boolean salvar(Funcionario funcionario) {
-		return true;
+	
+	private FuncionarioDAO dao;
+	
+	public FuncionarioService() {
+		this.dao = new FuncionarioDAO();
 	}
 
-	public boolean deletar(Funcionario funcionario) {
-		return true;
+	public void salvar(Funcionario funcionario, Collection<Funcionario> lista) {
+		dao.salvar(funcionario, lista);
 	}
 
-	public boolean editar(Funcionario funcionario) {
-		return true;
+	public void deletar(Funcionario funcionario, Collection<Funcionario> lista) {
+		dao.deletar(funcionario, lista);
+	}
+
+	public void editar(Funcionario funcionario, Collection<Funcionario> lista) {
+		
 	}
 }
