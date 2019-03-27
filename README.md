@@ -1,3 +1,3 @@
 # crud_web2
 
-CRUD em JSF simples para a disciplina de Web II.
+CRUD simples em JSF para a disciplina de Web II.
