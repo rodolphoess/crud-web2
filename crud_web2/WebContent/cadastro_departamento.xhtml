@@ -1,9 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-	<ui:composition template="">
-	</ui:composition>
+<h:head>
+	<title>Cadastro Departamento</title>
+	<style>
+@import url("estilo.css");
+</style>
+</h:head>
+
+<h:body>
+	<h1>Cadastro de Departamento</h1>
+	<h:form>
+		<label>Nome: <h:inputText id="nome"
+				value="#{departamentoBean.departamento.nome}" /></label>
+		<br />
+				
+		<h:commandButton action="#{departamentoBean.salvar}" value="Salvar" />
+
+		<h2>Lista de Funcionários Cadastrados</h2>
+		<h:dataTable value="#{departamentoBean.lista}" var="p"
+			rowClasses="linha1, linha2">
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{p.nome}
+			</h:column>			
+			<h:column>
+				<f:facet name="header">Ações</f:facet>
+				<h:commandLink value="Editar">
+					<f:setPropertyActionListener value="#{p}"
+						target="#{departamentoBean.departamento}" />
+				</h:commandLink> | 
+				<h:commandLink value="Excluir" action="#{departamentoBean.excluir}"> 
+				<f:setPropertyActionListener value="#{p}" target="#{departamentoBean.departamento}" />
+				</h:commandLink>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+</h:body>
+
 </html>

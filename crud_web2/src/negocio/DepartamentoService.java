@@ -1,16 +1,18 @@
 package negocio;
 
+import modelo.Departamento;
+
 public class DepartamentoService {
 	
-	public void salvar() { 
-		
+	public boolean salvar(Departamento departamento) { 
+		return true;
 	}
 
-	public void deletar() {
-		
+	public boolean deletar(Departamento departamento) {
+		return true;
 	}
 	
-	public void editar() {
-		
+	public boolean editar(Departamento departamento) {
+		return true;
 	}
 }
